@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "154502624282",
+    "project_id": "seventeencentury-8fb55",
+    "storage_bucket": "seventeencentury-8fb55.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:154502624282:android:672ca4254e40598a380da3",
+        "android_client_info": {
+          "package_name": "com.seventeencentury.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2Wnmi4S8jBnd6lKW-0i8wUFHtIODAzv4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

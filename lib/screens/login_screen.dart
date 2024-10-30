@@ -1,8 +1,7 @@
-import 'dart:ui';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:loginapp/screens/animated_button.dart';
-import 'package:loginapp/screens/cutsom_input.dart'; // Adjust the import based on your actual file structure
+import 'package:loginapp/widgets/animated_button.dart';
+import 'package:loginapp/widgets/cutsom_input.dart'; // Adjust the import based on your actual file structure
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});

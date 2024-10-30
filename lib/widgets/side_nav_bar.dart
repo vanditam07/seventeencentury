@@ -6,43 +6,100 @@ class SideNavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      child: ListView(
-        padding: EdgeInsets.zero,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          const UserAccountsDrawerHeader(
-            accountName: Text('Profile'),
-            accountEmail: Text('User ID'),
-            currentAccountPicture: CircleAvatar(
-              child: Icon(Icons.person),
+          // Profile Section with background color
+          Container(
+            color: const Color(0xFFC4D2FF), // Color only for the top part
+            padding: const EdgeInsets.all(20),
+            child: const Row(
+              children: [
+                SizedBox(
+                  height: 150,
+                ),
+                CircleAvatar(
+                  radius: 25,
+                  backgroundColor: Colors.white,
+                  child: Icon(Icons.person, color: Colors.black, size: 30),
+                ),
+                SizedBox(width: 16),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Profile',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                      ),
+                    ),
+                    Text(
+                      'User ID',
+                      style: TextStyle(
+                        fontSize: 14,
+                        color: Colors.black54,
+                      ),
+                    ),
+                  ],
+                ),
+              ],
             ),
           ),
-          ListTile(
-            leading: const Icon(Icons.dashboard),
-            title: const Text('Dashboard'),
-            onTap: () {
-              Navigator.pushNamed(context, '/dashboard');
-            },
+          Container(
+            height: 30,
+            color: Colors.white,
           ),
-          ListTile(
-            leading: const Icon(Icons.add),
-            title: const Text('Create Button'),
-            onTap: () {
-              Navigator.pushNamed(context, '/create_button');
-            },
+          // Rest of the drawer with white background
+          Expanded(
+            child: Container(
+              color: Colors.white,
+              child: ListView(
+                padding: EdgeInsets.zero,
+                children: [
+                  ListTile(
+                    leading: const Icon(Icons.dashboard, color: Colors.black),
+                    title: const Text(
+                      'Dashboard',
+                      style: TextStyle(color: Colors.black),
+                    ),
+                    onTap: () {
+                      Navigator.pushNamed(context, '/dashboard');
+                    },
+                  ),
+                  ListTile(
+                    leading: const Icon(Icons.list, color: Colors.black),
+                    title: const Text(
+                      'View Forms',
+                      style: TextStyle(color: Colors.black),
+                    ),
+                    onTap: () {
+                      // Add action for 'View Forms' here
+                    },
+                  ),
+                ],
+              ),
+            ),
           ),
-          ListTile(
-            leading: const Icon(Icons.list),
-            title: const Text('View Forms'),
-            onTap: () {
-              Navigator.pushNamed(context, '/home');
-            },
-          ),
-          ListTile(
-            leading: const Icon(Icons.logout),
-            title: const Text('Logout'),
-            onTap: () {
-              Navigator.pushReplacementNamed(context, '/login');
-            },
+          // Logout Button
+          Container(
+            color: Colors.white,
+            padding: const EdgeInsets.only(left: 20, bottom: 20),
+            child: ListTile(
+              leading: const Icon(Icons.logout, color: Colors.black),
+              title: const Text(
+                'Logout',
+                style: TextStyle(color: Colors.black),
+              ),
+              onTap: () {
+                Navigator.pushReplacementNamed(context, '/login');
+              },
+              tileColor: Colors.white,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
+            ),
           ),
         ],
       ),
